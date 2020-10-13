@@ -1,16 +1,64 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {NavBarComponent} from './navBar/navbar.component';
+import {HomeComponent} from './home/home.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {CarouselComponent} from './carousel/carousel.component';
+import {CardsComponent} from './cards/cards.component';
+import {InfoComponent} from './information/info.component';
+import {EndComponent} from './footer/end.component';
+import {ReviewComponent} from './reviews/review.component';
+import {AboutComponent} from './aboutProj/about.component';
+import {FormsModule} from '@angular/forms';
+import {TestComponent} from './test/test.component';
+import {AddBonusComponent} from './addBonus/addBonus.component';
+import {bonusChildComponent} from './bonusChild/bonusChild.component';
+import {foundersComponent} from './founders/founders.component';
+import {CoursesComponent} from './courses/courses.component';
+import {GradeConverterPipe} from './pipes/temp-convertor.pipe';
+import {TestCheckComponent} from './testcheck/testcheck.component';
+import {TeachersComponent} from './teachers/teachers.component';
+
+const appRoutes: Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'about', component: AboutComponent},
+  {path: 'reviews', component: ReviewComponent},
+  {path: 'test', component: TestComponent},
+  {path: 'courses', component: CoursesComponent},
+  {path: 'teachers', component: TeachersComponent},
+];
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavBarComponent,
+    HomeComponent,
+    CarouselComponent,
+    CardsComponent,
+    InfoComponent,
+    EndComponent,
+    ReviewComponent,
+    AboutComponent,
+    TestComponent,
+    AddBonusComponent,
+    bonusChildComponent,
+    foundersComponent,
+    CoursesComponent,
+    GradeConverterPipe,
+    TestCheckComponent,
+    TeachersComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

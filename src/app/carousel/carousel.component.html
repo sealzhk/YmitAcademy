@@ -1,0 +1,9 @@
+<div class="container mx-auto my-3">
+  <ngb-carousel *ngIf="items">
+    <ng-template ngbSlide *ngFor="let i of items">
+      <div class="picsum-img-wrapper" style="margin: auto">
+        <a href="{{i.url}}"><img src="{{i.image}}"  alt="slide" style="margin: auto"></a>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>

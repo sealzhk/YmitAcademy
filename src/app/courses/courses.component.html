@@ -1,0 +1,31 @@
+<div class="my-3">
+<div class="form-group" style="margin-left: 100px">
+  <label for="sel1">Выберите курсы, про которые вы бы хотели узнать: </label>
+  <select class="form-control" id="sel1" [(ngModel)] ="num" style="width: 500px">
+    <option *ngFor="let a of courses">{{a.sub}}</option>
+  </select>
+</div>
+<div [ngSwitch]="num">
+  <div *ngFor="let a of courses" style="background-color: {{a.color}}">
+    <div *ngSwitchCase='a.sub'>
+      <img src="{{a.img}}" class="mx-auto d-block py-2" style="width: 1000px; height: 300px">
+      <h4 style="text-align: center; margin-top: 20px">{{a.header}}</h4>
+      <p class="container my-4 pb-3">{{a.descr}}</p>
+    </div>
+  </div>
+  <div *ngSwitchDefault style="background-color: ivory">
+    <div class="container mx-auto my-3 p-2">
+      <ngb-carousel>
+        <ng-template ngbSlide *ngFor="let i of courses">
+          <div class="picsum-img-wrapper" style="margin: auto">
+            <img src="{{i.img}}"  alt="slide" class="mx-auto d-block">
+          </div>
+        </ng-template>
+      </ngb-carousel>
+      <h4 style="text-align: center; padding-top: 20px">Здесь вы можете узнать больше информации про наши курсы!</h4>
+      <p>Выберите курс, который вас интересует в окошке сверху! :)</p>
+      <p>Мы поднимем ваш уровень в любой из этих сфер: английский язык, биология, история Казахстана, казахский язык, математика, физика, а так же подготовим к НИШ / РФМШ и многое другое!</p>
+    </div>
+  </div>
+</div>
+</div>

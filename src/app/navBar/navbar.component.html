@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-md navbar-light" style="background-color: #37b5ff">
+  <a class="navbar-brand ml-3" routerLink="/"><img src="../../assets/images/logo.png" style="width: 45px; height: 45px" class="mr-2">Ymit academy</a>
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item">
+        <button type="button" routerLink="/" class="btn">Главная</button>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn" routerLink="/about">Про нас</button>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn" routerLink="/courses">Курсы</button>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn" routerLink="/teachers">Учителя</button>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn" routerLink="/reviews">Отзывы</button>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn" routerLink="/test">Тест</button>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <button type="button" class="btn">Войти</button>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn">Регистрация</button>
+      </li>
+    </ul>
+</nav>
+<p style="text-align: right; margin-right: 10px; margin-top: 10px">Время: {{toDate | date:'medium'}} </p>
+

@@ -1,0 +1,6 @@
+<div class="my-3">
+  <h3 style="text-align: center"> Хочешь еще больше полезной информации для саморазвития? </h3>
+  <div class="container">
+    <button type="button" class="btn btn-outline-info btn-block my-3" (click)="addInformation =! addInformation">Нажми, чтобы получить больше!</button></div>
+  <app-bonus-child *ngIf="addInformation"></app-bonus-child>
+</div>
