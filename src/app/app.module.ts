@@ -22,6 +22,8 @@ import {CoursesComponent} from './courses/courses.component';
 import {GradeConverterPipe} from './pipes/temp-convertor.pipe';
 import {TestCheckComponent} from './testcheck/testcheck.component';
 import {TeachersComponent} from './teachers/teachers.component';
+import {LoginComponent} from './login/login.component';
+import {RegistrComponent} from './registr/registr.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -30,6 +32,8 @@ const appRoutes: Routes = [
   {path: 'test', component: TestComponent},
   {path: 'courses', component: CoursesComponent},
   {path: 'teachers', component: TeachersComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'registr', component: RegistrComponent},
 ];
 
 
@@ -51,7 +55,9 @@ const appRoutes: Routes = [
     CoursesComponent,
     GradeConverterPipe,
     TestCheckComponent,
-    TeachersComponent
+    TeachersComponent,
+    LoginComponent,
+    RegistrComponent
   ],
   imports: [
     BrowserModule,
