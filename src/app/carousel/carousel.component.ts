@@ -1,4 +1,7 @@
 import { Component, Input } from '@angular/core';
+import {LoggingService} from '../services/logging.service';
+import {Cards} from '../classes';
+import {AllService} from '../services/all.service';
 
 @Component({
   selector: 'app-carousel',
@@ -6,9 +9,9 @@ import { Component, Input } from '@angular/core';
 })
 
 export class CarouselComponent {
-  items = [{image: '../../assets/images/car1.png', url: 'https://www.instagram.com/p/CDtJ9hYlXDw/'},
-           {image: '../../assets/images/car2.png', url: 'https://www.instagram.com/p/CDtYW8IlobN/'},
-           {image: '../../assets/images/car3.png', url: 'https://www.instagram.com/p/CDtei0aFzda/'},
-           {image: '../../assets/images/car4.png', url: 'https://www.instagram.com/p/CDt6qSrnIke/'},
-           {image: '../../assets/images/car5.png', url: 'https://www.instagram.com/p/CDteSpJlZpN/'}];
+  items: Cards[];
+  constructor(private allService: AllService, private loggingService: LoggingService) {
+    this.items = this.allService.getImages();
+    this.loggingService.log('Carousel items: ' + this.items.toString());
+  }
 }

@@ -1,4 +1,7 @@
 import {Component} from '@angular/core';
+import {Founders} from '../classes';
+import {LoggingService} from '../services/logging.service';
+import {AllService} from '../services/all.service';
 
 @Component({
   selector: 'app-founders',
@@ -6,7 +9,9 @@ import {Component} from '@angular/core';
 })
 // tslint:disable-next-line:class-name
 export class foundersComponent {
-  cards = [{image: '../../assets/images/Leyla.jpeg', name: 'Апышева Лейла'},
-    {image: '../../assets/images/Sanzhar.jpeg', name: 'Санжар Елшібеков'}
-  ];
+  foundList: Founders[];
+  constructor(private allService: AllService, private loggingService: LoggingService) {
+    this.foundList = this.allService.getFounders();
+    this.loggingService.log('Founders: ' + this.foundList.toString());
+  }
 }

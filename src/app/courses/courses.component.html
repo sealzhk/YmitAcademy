@@ -8,7 +8,7 @@
 <div [ngSwitch]="num">
   <div *ngFor="let a of courses" style="background-color: {{a.color}}">
     <div *ngSwitchCase='a.sub'>
-      <img src="{{a.img}}" class="mx-auto d-block py-2" style="width: 1000px; height: 300px">
+      <img src="{{a.image}}" class="mx-auto d-block py-2" style="width: 1000px; height: 300px">
       <h4 style="text-align: center; margin-top: 20px">{{a.header}}</h4>
       <p class="container my-4 pb-3">{{a.descr}}</p>
     </div>
@@ -18,7 +18,7 @@
       <ngb-carousel>
         <ng-template ngbSlide *ngFor="let i of courses">
           <div class="picsum-img-wrapper" style="margin: auto">
-            <img src="{{i.img}}"  alt="slide" class="mx-auto d-block">
+            <img src="{{i.image}}"  alt="slide" class="mx-auto d-block">
           </div>
         </ng-template>
       </ngb-carousel>

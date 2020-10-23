@@ -24,6 +24,10 @@ import {TestCheckComponent} from './testcheck/testcheck.component';
 import {TeachersComponent} from './teachers/teachers.component';
 import {LoginComponent} from './login/login.component';
 import {RegistrComponent} from './registr/registr.component';
+import {NewRevComponent} from './newRev/newRev.component';
+import {AllRevComponent} from './allRev/allRev.component';
+import {LoggingService} from './services/logging.service';
+import {AllService} from './services/all.service';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -57,7 +61,9 @@ const appRoutes: Routes = [
     TestCheckComponent,
     TeachersComponent,
     LoginComponent,
-    RegistrComponent
+    RegistrComponent,
+    NewRevComponent,
+    AllRevComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +72,10 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule
   ],
-  providers: [],
+  providers: [
+    LoggingService,
+    AllService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
