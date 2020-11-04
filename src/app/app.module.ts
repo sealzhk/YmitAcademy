@@ -1,7 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {NavBarComponent} from './navBar/navbar.component';
@@ -28,18 +27,7 @@ import {NewRevComponent} from './newRev/newRev.component';
 import {AllRevComponent} from './allRev/allRev.component';
 import {LoggingService} from './services/logging.service';
 import {AllService} from './services/all.service';
-
-const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'about', component: AboutComponent},
-  {path: 'reviews', component: ReviewComponent},
-  {path: 'test', component: TestComponent},
-  {path: 'courses', component: CoursesComponent},
-  {path: 'teachers', component: TeachersComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'registr', component: RegistrComponent},
-];
-
+import {appRoutes} from './app-routing.module';
 
 @NgModule({
   declarations: [
