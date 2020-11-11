@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "YmitAcademy"
+    }
+  },
+  "defaultProject": "YmitAcademy",
+  "cli": {
+    "analytics": "3ab49203-43ea-4c74-b8f2-09d77aa099a2"
+  }
 }

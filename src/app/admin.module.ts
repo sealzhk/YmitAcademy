@@ -1,4 +1,3 @@
-import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {NavAdminComponent} from './navForAdmin/navAdmin.component';
@@ -7,7 +6,8 @@ import {UserComponent} from './user/user.component';
 import {GroupComponent} from './group/group.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {AdminComponent} from './admin.component';
-import {AdminRoutes} from './admin-routing.module';
+import {AdminRoutes, AdminRoutingModule} from './admin-routing.module';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -18,9 +18,10 @@ import {AdminRoutes} from './admin-routing.module';
     AdminComponent
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     RouterModule.forChild(AdminRoutes),
-    FormsModule
+    FormsModule,
+    AdminRoutingModule
   ],
   providers: [],
   bootstrap: []
