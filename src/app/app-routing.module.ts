@@ -8,18 +8,21 @@ import {CoursesComponent} from './courses/courses.component';
 import {TeachersComponent} from './teachers/teachers.component';
 import {LoginComponent} from './login/login.component';
 import {RegistrComponent} from './registr/registr.component';
+import {UserGuard} from './guards/user.guard';
+import {SaveGuard} from './guards/save.guard';
+import {CanLoadGuard} from './guards/canLoad.guard';
 
 
 export const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'about', component: AboutComponent},
-  {path: 'reviews', component: ReviewComponent},
+  {path: 'reviews', component: ReviewComponent, canDeactivate: [SaveGuard]},
   {path: 'test', component: TestComponent},
   {path: 'courses', component: CoursesComponent},
   {path: 'teachers', component: TeachersComponent},
   {path: 'login', component: LoginComponent},
   {path: 'registr', component: RegistrComponent},
-  {path: 'admin', loadChildren: () => import('./admin.module').then(m => m.AdminModule)}
+  {path: 'admin', loadChildren: () => import('./admin.module').then(m => m.AdminModule), canActivate: [UserGuard], canLoad: [CanLoadGuard]}
 ];
 
 @NgModule({

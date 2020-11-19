@@ -28,6 +28,9 @@ import {AllRevComponent} from './allRev/allRev.component';
 import {LoggingService} from './services/logging.service';
 import {AllService} from './services/all.service';
 import {appRoutes} from './app-routing.module';
+import {UserGuard} from './guards/user.guard';
+import {SaveGuard} from './guards/save.guard';
+import {CanLoadGuard} from './guards/canLoad.guard';
 
 @NgModule({
   declarations: [
@@ -62,7 +65,10 @@ import {appRoutes} from './app-routing.module';
   ],
   providers: [
     LoggingService,
-    AllService
+    AllService,
+    UserGuard,
+    SaveGuard,
+    CanLoadGuard
   ],
   bootstrap: [AppComponent]
 })

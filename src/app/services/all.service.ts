@@ -7,6 +7,7 @@ export class AllService {
 
   constructor(private loggingService: LoggingService) {
   }
+  isLoggedIn = false;
 
   getFounders() {
     let foundList: Founders[];

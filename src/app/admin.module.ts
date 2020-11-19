@@ -8,6 +8,8 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {AdminComponent} from './admin.component';
 import {AdminRoutes, AdminRoutingModule} from './admin-routing.module';
 import {CommonModule} from '@angular/common';
+import {UserGuard} from './guards/user.guard';
+import {CanLoadGuard} from './guards/canLoad.guard';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,7 @@ import {CommonModule} from '@angular/common';
     FormsModule,
     AdminRoutingModule
   ],
-  providers: [],
+  providers: [UserGuard, CanLoadGuard],
   bootstrap: []
 })
 export class AdminModule { }

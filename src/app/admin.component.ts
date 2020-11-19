@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AllService} from './services/all.service';
 
 @Component({
   selector: 'app-admin',
@@ -6,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AdminComponent {
   title = 'YmitAcademy';
+  constructor(private userService: AllService) { }
 }
