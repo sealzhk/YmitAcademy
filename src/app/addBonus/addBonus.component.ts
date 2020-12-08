@@ -9,8 +9,7 @@ import {
   selector: 'app-bonus',
   templateUrl: './addBonus.component.html'
 })
-export class AddBonusComponent implements OnChanges, OnInit, DoCheck,
-  AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
+export class AddBonusComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
   addInformation = false;
 
   ngAfterContentChecked(): void {

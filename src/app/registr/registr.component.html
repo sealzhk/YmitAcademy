@@ -1,17 +1,38 @@
-<div class="container" style="margin-bottom: 245px">
-  <form>
+<div class="container mt-5">
+  <form [formGroup]="regirstrForm" (ngSubmit)="regirstrForm.valid && addUser(newUser)">
+    <div class="form-group">
+      <label for="firstname">Введите имя:</label>
+      <input required type="firstname" #newFirstName class="form-control" [(ngModel)]="newUser.firstname" placeholder="Введите имя" id="firstname" formControlName="newFirstName" [ngClass]="{'is-invalid': regirstrForm.get('newFirstName').touched && regirstrForm.get('newFirstName').invalid}">
+    </div>
+    <div class="form-group">
+      <label for="lastname">Введите фамилию:</label>
+      <input required type="lastname" #newLastName class="form-control" [(ngModel)]="newUser.lastname" placeholder="Введите фамилию" id="lastname" formControlName="newLastName" [ngClass]="{'is-invalid': regirstrForm.get('newLastName').touched && regirstrForm.get('newLastName').invalid}">
+    </div>
     <div class="form-group">
       <label for="email">Введите email:</label>
-      <input type="email" class="form-control" placeholder="Введите email" id="email">
+      <input required type="email" #newEmail class="form-control" [(ngModel)]="newUser.email" placeholder="Введите email" id="email" formControlName="newEmail" [ngClass]="{'is-invalid': regirstrForm.get('newEmail').touched && regirstrForm.get('newEmail').invalid}">
+      <div *ngIf="regirstrForm.get('newEmail').touched && regirstrForm.get('newEmail').invalid" class="invalid-feedback">
+        <div *ngIf="regirstrForm.get('newEmail').errors.required">Необходимо ввести email</div>
+        <div *ngIf="regirstrForm.get('newEmail').errors.email">Неправильный тип email</div>
+      </div>
     </div>
     <div class="form-group">
       <label for="pwd">Введите пароль:</label>
-      <input type="password" class="form-control" placeholder="Введите пароль" id="pwd">
+      <input required type="password" #newPassword class="form-control" [(ngModel)]="newUser.password" placeholder="Введите пароль" id="pwd" formControlName="newPassword" [ngClass]="{'is-invalid': regirstrForm.get('newPassword').touched && regirstrForm.get('newPassword').invalid}">
+      <div *ngIf="regirstrForm.get('newPassword').touched && regirstrForm.get('newPassword').invalid" class="invalid-feedback">
+        <div *ngIf="regirstrForm.get('newPassword').errors.required">Необходимо ввести пароль</div>
+        <div *ngIf="regirstrForm.get('newPassword').errors.minlength">Пароль должен состоять как минимум из 8 символов</div>
+      </div>
     </div>
     <div class="form-group">
       <label for="pwd">Введите пароль еще раз:</label>
-      <input type="password" class="form-control" placeholder="Введите пароль" id="pwd1">
+      <input required appConfirmPassword="newPassword" type="password" #newPasswordAgain class="form-control" placeholder="Введите пароль еще раз" id="pwd1" formControlName="newPasswordAgain" [ngClass]="{'is-invalid': regirstrForm.get('newPasswordAgain').touched && regirstrForm.get('newPasswordAgain').invalid}">
+      <div *ngIf="regirstrForm.get('newPasswordAgain').touched && regirstrForm.get('newPasswordAgain').invalid" class="invalid-feedback">
+        <div *ngIf="regirstrForm.get('newPasswordAgain').errors.required">Необходимо ввести пароль</div>
+        <div *ngIf="regirstrForm.get('newPasswordAgain').errors.minlength">Пароль должен состоять как минимум из 8 символов</div>
+        <div *ngIf="regirstrForm.get('newPasswordAgain').errors.notEqual">Пароль не совпадает</div>
+      </div>
     </div>
-    <button type="submit" class="btn btn-primary">Зарегестрироваться</button>
+    <button type="submit" class="btn btn-primary" [disabled]='!regirstrForm.valid'>Зарегестрироваться</button>
   </form>
 </div>

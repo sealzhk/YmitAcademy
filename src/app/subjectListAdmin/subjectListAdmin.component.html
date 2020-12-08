@@ -1,0 +1,33 @@
+<div class="container my-5">
+  <button type="button" class="btn btn-outline-info btn-block my-3" routerLink="/subjectCreate">Добавить курс</button>
+  <h3>Список предметов:</h3>
+  <div class="container mt-3">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>id</th>
+        <th>Предмет</th>
+        <th>Изображение</th>
+        <th>Заголовок</th>
+        <th>Описание</th>
+        <th>Цвет</th>
+        <th>Действие</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let i of Courses">
+        <td>{{i.id}}</td>
+        <td>{{i.sub}}</td>
+        <td>{{i.image}}</td>
+        <td>{{i.header}}</td>
+        <td>{{i.descr}}</td>
+        <td>{{i.color}}</td>
+        <td>
+          <button class="update" type="button" routerLink="/subjectUpdate/{{i.id}}">Изменить</button>
+          <button class="delete" type="button" (click)="delete(i.id)">Удалить</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

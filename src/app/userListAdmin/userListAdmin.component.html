@@ -1,0 +1,28 @@
+<div class="container my-5">
+  <h3>Список пользователей:</h3>
+  <div class="container mt-3">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>id</th>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Email</th>
+        <th>Роль</th>
+        <th>Действие</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let i of Users">
+        <td>{{i.id}}</td>
+        <td>{{i.firstname}}</td>
+        <td>{{i.lastname}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.role}}</td>
+        <td><span><button class="delete" type="button" (click)="delete(i.id)">Удалить</button></span></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

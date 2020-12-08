@@ -1,31 +1,38 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {NavAdminComponent} from './navForAdmin/navAdmin.component';
-import {FormsModule} from '@angular/forms';
-import {UserComponent} from './user/user.component';
-import {GroupComponent} from './group/group.component';
-import {DashboardComponent} from './dashboard/dashboard.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {UserListAdminComponent} from './userListAdmin/userListAdmin.component';
+import {ReviewsListAdminComponent} from './reviewsListAdmin/reviewsListAdmin.component';
+import {SubjectListAdminComponent} from './subjectListAdmin/subjectListAdmin.component';
 import {AdminComponent} from './admin.component';
 import {AdminRoutes, AdminRoutingModule} from './admin-routing.module';
 import {CommonModule} from '@angular/common';
 import {UserGuard} from './guards/user.guard';
-import {CanLoadGuard} from './guards/canLoad.guard';
+import {NavAdminComponent} from './navForAdmin/navAdmin.component';
+import {SubjectCreateComponent} from './subjectListAdmin/subjectCreate/subjectCreate.component';
+import {SubjectUpdateComponent} from './subjectListAdmin/subjectUpdate/subjectUpdate.component';
 
 @NgModule({
   declarations: [
+    UserListAdminComponent,
+    ReviewsListAdminComponent,
+    SubjectListAdminComponent,
+    AdminComponent,
     NavAdminComponent,
-    UserComponent,
-    GroupComponent,
-    DashboardComponent,
-    AdminComponent
+    SubjectCreateComponent,
+    SubjectUpdateComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(AdminRoutes),
     FormsModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    ReactiveFormsModule
   ],
-  providers: [UserGuard, CanLoadGuard],
+  providers: [UserGuard],
+  exports: [
+    NavAdminComponent
+  ],
   bootstrap: []
 })
 export class AdminModule { }

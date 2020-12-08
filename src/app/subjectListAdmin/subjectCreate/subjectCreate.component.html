@@ -1,0 +1,28 @@
+<div class="col-lg-6 mx-auto text-center form mt-5 mb-5">
+  <h3>Новый предмет:</h3>
+  <h4 class="display-5 text-truncate" style="text-align: left">Предмет:</h4>
+  <div>
+    <form [formGroup]="subForm" class="justify-content-center" (ngSubmit)="subForm.valid && addReview(newSubject)">
+      <div class="form-group">
+        <input required type="text" class="form-control" placeholder="Введите предмет" #newSub [(ngModel)]="newSubject.sub" formControlName="newSub" [ngClass]="{'is-invalid': subForm.get('newSub').touched && subForm.get('newSub').invalid}">
+      </div>
+      <h4 class="display-5 text-truncate" style="text-align: left">Ссылка на изображение:</h4>
+      <div class="form-group">
+        <input required type="text" class="form-control" placeholder="Введите ссылку" #newImg [(ngModel)]="newSubject.image" formControlName="newImg" [ngClass]="{'is-invalid': subForm.get('newImg').touched && subForm.get('newImg').invalid}">
+      </div>
+      <h4 class="display-5 text-truncate" style="text-align: left">Заголовок:</h4>
+      <div class="form-group">
+        <input required type="text" class="form-control" placeholder="Введите заголовок" #newHeader [(ngModel)]="newSubject.header" formControlName="newHeader" [ngClass]="{'is-invalid': subForm.get('newHeader').touched && subForm.get('newHeader').invalid}">
+      </div>
+      <h4 class="display-5 text-truncate" style="text-align: left">Цвет (в rgb формате):</h4>
+      <div class="form-group">
+        <input required type="text" class="form-control" placeholder="Введите цвет" #newColor [(ngModel)]="newSubject.color" formControlName="newColor" [ngClass]="{'is-invalid': subForm.get('newColor').touched && subForm.get('newColor').invalid}">
+      </div>
+      <h4 class="display-5 text-truncate" style="text-align: left">Описание:</h4>
+      <div class="form-group">
+        <textarea class="form-control" #newDescr [(ngModel)]="newSubject.descr"  id="exampleFormControlTextarea1" rows="3" placeholder="Введите описание" required formControlName="newDescr" [ngClass]="{'is-invalid': subForm.get('newDescr').touched && subForm.get('newDescr').invalid}"></textarea>
+      </div>
+      <button type="submit" class="btn btn-info" [disabled]='!subForm.valid'>Отправить</button>
+    </form>
+  </div>
+</div>

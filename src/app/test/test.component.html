@@ -1,5 +1,20 @@
-<div class="container mt-5">
-    <p>Your Grade: <input type="text" [(ngModel)]="grade"/> % </p>
-    <p>Your grade (A, B, C, D, E, F): <b>{{grade | gradeConverter}}</b> </p>
-  <app-testcheck></app-testcheck>
+<div class="container">
+  <h3>Тест на знание английского языка</h3>
+  <form class="my-5 ml-5" [formGroup]="testForm" >
+    <div *ngFor="let i of testQuestions">
+      <p style="background: #37b5ff; padding: 3px; opacity: 0.7; color: black; width: 750px">{{i.question}}</p>
+      <ul style="list-style-type: none">
+        <li><label><input name="{{i.q}}" type="radio" value="a" formControlName="{{i.q}}"> {{i.ans1}}</label></li>
+        <li><label><input name="{{i.q}}" type="radio" value="b" formControlName="{{i.q}}"> {{i.ans2}}</label></li>
+        <li><label><input name="{{i.q}}" type="radio" value="c" formControlName="{{i.q}}"> {{i.ans3}}</label></li>
+        <li><label><input name="{{i.q}}" type="radio" value="d" formControlName="{{i.q}}"> {{i.ans4}}</label></li>
+        <hr>
+      </ul>
+    </div>
+    <input type="submit" class="btn btn-secondary" (click)="submitAnswers()" style="background: #37b5ff; color: black;">
+  </form>
+  <p>Ваш балл: {{good}}</p>
+  <p>Ваша оценка: <input type="text" [(ngModel)]="grade"/> % </p>
+  <p>Ваша оценка (A, B, C, D, E, F): <b>{{grade | gradeConverter}}</b> </p>
+  <p>Ваш уровень английского: <input type="text" [(ngModel)]="level"/> % </p>
 </div>

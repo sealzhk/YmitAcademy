@@ -1,14 +1,22 @@
 import {Injectable} from '@angular/core';
 import {LoggingService} from './logging.service';
 import {Cards, Founders, Courses, Images, Review} from '../classes';
+import {Router} from '@angular/router';
 
 @Injectable()
 export class AllService {
 
-  constructor(private loggingService: LoggingService) {
+  constructor(private loggingService: LoggingService, private router: Router) {
   }
   isLoggedIn = false;
 
+  get login(): boolean {
+    return this.isLoggedIn;
+  }
+
+  set login(value){
+    this.isLoggedIn = value;
+  }
   getFounders() {
     let foundList: Founders[];
     foundList = [
@@ -95,15 +103,5 @@ export class AllService {
     ];
 
     return teachers;
-  }
-
-  getReview() {
-    let review: Review[];
-    review = [
-      new Review('Аяулым', 'Спасибо большое вашему центру, отлично объясняют!'),
-      new Review('Батыр', 'Давно хотел изучить программирование, спасибо!')
-    ];
-
-    return review;
   }
 }

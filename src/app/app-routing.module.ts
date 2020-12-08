@@ -22,7 +22,9 @@ export const appRoutes: Routes = [
   {path: 'teachers', component: TeachersComponent},
   {path: 'login', component: LoginComponent},
   {path: 'registr', component: RegistrComponent},
-  {path: 'admin', loadChildren: () => import('./admin.module').then(m => m.AdminModule), canActivate: [UserGuard], canLoad: [CanLoadGuard]}
+  {path: 'admin', loadChildren: () => import('./admin.module').then(m => m.AdminModule), canActivate: [UserGuard], canLoad: [CanLoadGuard]},
+  // tslint:disable-next-line:max-line-length
+  {path: 'student', loadChildren: () => import('./student.module').then(m => m.StudentModule), canActivate: [UserGuard], canLoad: [CanLoadGuard]}
 ];
 
 @NgModule({

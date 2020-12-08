@@ -2,11 +2,11 @@
 <div class="form-group" style="margin-left: 100px">
   <label for="sel1">Выберите курсы, про которые вы бы хотели узнать: </label>
   <select class="form-control" id="sel1" [(ngModel)] ="num" style="width: 500px">
-    <option *ngFor="let a of courses">{{a.sub}}</option>
+    <option *ngFor="let a of Courses">{{a.sub}}</option>
   </select>
 </div>
 <div [ngSwitch]="num">
-  <div *ngFor="let a of courses" style="background-color: {{a.color}}">
+  <div *ngFor="let a of Courses" style="background-color: {{a.color}}">
     <div *ngSwitchCase='a.sub'>
       <img src="{{a.image}}" class="mx-auto d-block py-2" style="width: 1000px; height: 300px">
       <h4 style="text-align: center; margin-top: 20px">{{a.header}}</h4>

@@ -1,0 +1,25 @@
+<div class="container my-5">
+  <h3>Список отзывов:</h3>
+  <div class="container mt-3">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>id</th>
+        <th>Имя</th>
+        <th>Отзыв</th>
+        <th>Действие</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let i of Reviews">
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.rev}}</td>
+        <td><span><button class="delete" type="button" (click)="delete(i.id)">Удалить</button></span></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+

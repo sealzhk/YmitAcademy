@@ -1,25 +1,22 @@
-<!--<app-newrev (newReview)="addRev($event)"></app-newrev>
-<app-allrev [reviewsOnly]="reviewsOnly"></app-allrev> -->
-<h3 style="text-align: center" class="mt-5">Оставьте отзыв:</h3>
-<div class="col-lg-6 mx-auto text-center form">
+<div class="container mt-3" *ngIf="Reviews.length != 0">
+  <h4 style="text-align: center">Отзывы:</h4>
+  <ul class="list-group my-3 mx-5">
+    <li *ngFor="let i of Reviews" class="list-group-item"><h5>{{i.name}}</h5><br>{{i.rev}}</li>
+  </ul>
+</div>
+<div class="col-lg-6 mx-auto text-center form mt-5 mb-5">
+  <h3>Оставьте отзыв:</h3>
   <h4 class="display-5 text-truncate" style="text-align: left">Ваше имя:</h4>
   <div>
-    <form action="" class="justify-content-center">
+    <form [formGroup]="revForm" class="justify-content-center" (ngSubmit)="revForm.valid && addReview(newReview)">
       <div class="form-group">
-        <label class="sr-only">Name</label>
-        <input type="text" #newName class="form-control" placeholder="Введите имя">
+        <input required type="text" class="form-control" placeholder="Введите имя" #newName [(ngModel)]="newReview.name" formControlName="newName" [ngClass]="{'is-invalid': revForm.get('newName').touched && revForm.get('newName').invalid}">
       </div>
       <h4 class="display-5 text-truncate" style="text-align: left">Отзыв:</h4>
       <div class="form-group">
-        <textarea class="form-control" #newRev id="exampleFormControlTextarea1" rows="3" placeholder="Введите отзыв"></textarea>
+        <textarea class="form-control" #newRev [(ngModel)]="newReview.rev"  id="exampleFormControlTextarea1" rows="3" placeholder="Введите отзыв" required formControlName="newRev" [ngClass]="{'is-invalid': revForm.get('newRev').touched && revForm.get('newRev').invalid}"></textarea>
       </div>
-      <button type="submit" (click)='handleButtonClick(newName.value, newRev.value)' class="btn btn-info">Отправить</button>
+      <button type="submit" class="btn btn-info" [disabled]='!revForm.valid'>Отправить</button>
     </form>
   </div>
-</div>
-<div class="container">
-  <h4 class="ml-5">Отзывы:</h4>
-  <ul class="list-group my-3 mx-5">
-    <li *ngFor="let i of reviews" class="list-group-item"><h5>{{i.name}}</h5><br>{{i.review}}</li>
-  </ul>
 </div>

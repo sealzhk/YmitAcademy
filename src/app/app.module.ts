@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {NavBarComponent} from './navBar/navbar.component';
@@ -12,14 +12,13 @@ import {InfoComponent} from './information/info.component';
 import {EndComponent} from './footer/end.component';
 import {ReviewComponent} from './reviews/review.component';
 import {AboutComponent} from './aboutProj/about.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TestComponent} from './test/test.component';
 import {AddBonusComponent} from './addBonus/addBonus.component';
 import {bonusChildComponent} from './bonusChild/bonusChild.component';
 import {foundersComponent} from './founders/founders.component';
 import {CoursesComponent} from './courses/courses.component';
 import {GradeConverterPipe} from './pipes/temp-convertor.pipe';
-import {TestCheckComponent} from './testcheck/testcheck.component';
 import {TeachersComponent} from './teachers/teachers.component';
 import {LoginComponent} from './login/login.component';
 import {RegistrComponent} from './registr/registr.component';
@@ -31,6 +30,10 @@ import {appRoutes} from './app-routing.module';
 import {UserGuard} from './guards/user.guard';
 import {SaveGuard} from './guards/save.guard';
 import {CanLoadGuard} from './guards/canLoad.guard';
+import {HttpClientModule} from '@angular/common/http';
+import {confirmPasswordDirective} from './services/confirmPassword.directive';
+import {AdminModule} from './admin.module';
+import {StudentModule} from './student.module';
 
 @NgModule({
   declarations: [
@@ -49,19 +52,23 @@ import {CanLoadGuard} from './guards/canLoad.guard';
     foundersComponent,
     CoursesComponent,
     GradeConverterPipe,
-    TestCheckComponent,
     TeachersComponent,
     LoginComponent,
     RegistrComponent,
     NewRevComponent,
-    AllRevComponent
+    AllRevComponent,
+    confirmPasswordDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    AdminModule,
+    StudentModule
   ],
   providers: [
     LoggingService,
