@@ -29,3 +29,9 @@ export class Student {
   telNum: string;
   course: string;
 }
+
+export class Images {
+  id: number;
+  image: string;
+  url: string;
+}
