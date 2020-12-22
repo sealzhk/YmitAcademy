@@ -1,3 +1,4 @@
+<app-nav></app-nav>
 <div class="container">
   <h3>Тест на знание английского языка</h3>
   <form class="my-5 ml-5" [formGroup]="testForm" >
@@ -16,5 +17,5 @@
   <p>Ваш балл: {{good}}</p>
   <p>Ваша оценка: <input type="text" [(ngModel)]="grade"/> % </p>
   <p>Ваша оценка (A, B, C, D, E, F): <b>{{grade | gradeConverter}}</b> </p>
-  <p>Ваш уровень английского: <input type="text" [(ngModel)]="level"/> % </p>
+  <p>Ваш уровень английского: <input type="text" [(ngModel)]="level"/></p>
 </div>

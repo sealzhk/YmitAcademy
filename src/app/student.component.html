@@ -1,3 +1,4 @@
+<student-nav></student-nav>
 <div class="container mt-5">
     <form [formGroup]="studentForm" (ngSubmit)="studentForm.valid && add(newRecord)">
       <div class="form-group">
@@ -13,9 +14,9 @@
         <input required type="firstname" #newTelNum class="form-control" [(ngModel)]="newRecord.telNum" placeholder="Введите номер телефона" id="telnum" formControlName="newTelNum" [ngClass]="{'is-invalid': studentForm.get('newTelNum').touched && studentForm.get('newTelNum').invalid}">
       </div>
       <label for="sel1">Выберите курс, который вы хотите изучить: </label>
-      <select class="form-control" id="sel1">
-        <option *ngFor="let a of Courses" formControlName="newCourse" [(ngModel)]="newRecord.course">{{a.sub}}</option>
+      <select class="form-control" id="sel1" formControlName="newCourse" [(ngModel)]="newRecord.course">
+        <option *ngFor="let a of Courses" value="{{a.sub}}">{{a.sub}}</option>
       </select>
-      <button type="submit" class="btn btn-info" [disabled]='!studentForm.valid'>Отправить</button>
+      <button type="submit" class="btn btn-info mt-3" [disabled]='!studentForm.valid'>Отправить</button>
     </form>
   </div>

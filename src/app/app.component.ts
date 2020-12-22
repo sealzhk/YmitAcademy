@@ -9,7 +9,6 @@ import {LoggingService} from './services/logging.service';
 })
 export class AppComponent implements OnInit{
   title = 'YmitAcademy';
-  logged: boolean;
   constructor(public allService: AllService, public logser: LoggingService) {
   }
   ngOnInit() {

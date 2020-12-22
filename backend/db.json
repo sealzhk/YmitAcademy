@@ -32,14 +32,6 @@
       "password": "1234567890",
       "role": "student",
       "id": 2
-    },
-    {
-      "firstname": "Асылзада",
-      "lastname": "Намет",
-      "email": "asylzada@gmail.com",
-      "password": "qwertyuiop",
-      "role": "student",
-      "id": 3
     }
   ],
   "courses": [
@@ -131,32 +123,46 @@
       "lastname": "Жакиева",
       "telNum": "87777777777",
       "course": "Физика"
+    },
+    {
+      "firstname": "sedrftghj",
+      "lastname": "asdfgh",
+      "telNum": "sdfgh",
+      "course": "Математика",
+      "id": 2
+    },
+    {
+      "firstname": "Ислам",
+      "lastname": "Жакиева",
+      "telNum": "sdfghj",
+      "course": "Казахский язык",
+      "id": 3
     }
   ],
   "images": [
     {
       "id": 1,
-      "images": "assets/images/car1.png",
+      "images": "../../assets/images/car1.png",
       "url": "https://www.instagram.com/p/CDtJ9hYlXDw/"
     },
     {
       "id": 2,
-      "images": "assets/images/car2.png",
+      "images": "../../assets/images/car2.png",
       "url": "https://www.instagram.com/p/CDtYW8IlobN/"
     },
     {
       "id": 3,
-      "images": "assets/images/car3.png",
+      "images": "../../assets/images/car3.png",
       "url": "https://www.instagram.com/p/CDtei0aFzda/"
     },
     {
       "id": 4,
-      "images": "assets/images/car4.png",
+      "images": "../../assets/images/car4.png",
       "url": "https://www.instagram.com/p/CDt6qSrnIke/"
     },
     {
       "id": 5,
-      "images": "assets/images/car5.png",
+      "images": "../../assets/images/car5.png",
       "url": "https://www.instagram.com/p/CDteSpJlZpN/"
     }
   ]

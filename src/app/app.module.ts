@@ -36,47 +36,50 @@ import {AdminModule} from './admin.module';
 import {StudentModule} from './student.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavBarComponent,
-    HomeComponent,
-    CarouselComponent,
-    CardsComponent,
-    InfoComponent,
-    EndComponent,
-    ReviewComponent,
-    AboutComponent,
-    TestComponent,
-    AddBonusComponent,
-    bonusChildComponent,
-    foundersComponent,
-    CoursesComponent,
-    GradeConverterPipe,
-    TeachersComponent,
-    LoginComponent,
-    RegistrComponent,
-    NewRevComponent,
-    AllRevComponent,
-    confirmPasswordDirective
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    RouterModule.forRoot(appRoutes),
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    AdminModule,
-    StudentModule
-  ],
-  providers: [
-    LoggingService,
-    AllService,
-    UserGuard,
-    SaveGuard,
-    CanLoadGuard
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        NavBarComponent,
+        HomeComponent,
+        CarouselComponent,
+        CardsComponent,
+        InfoComponent,
+        EndComponent,
+        ReviewComponent,
+        AboutComponent,
+        TestComponent,
+        AddBonusComponent,
+        bonusChildComponent,
+        foundersComponent,
+        CoursesComponent,
+        GradeConverterPipe,
+        TeachersComponent,
+        LoginComponent,
+        RegistrComponent,
+        NewRevComponent,
+        AllRevComponent,
+        confirmPasswordDirective
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgbModule,
+        RouterModule.forRoot(appRoutes),
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        AdminModule,
+        StudentModule
+    ],
+    providers: [
+        LoggingService,
+        AllService,
+        UserGuard,
+        SaveGuard,
+        CanLoadGuard
+    ],
+    exports: [
+        NavBarComponent
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

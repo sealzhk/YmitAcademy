@@ -24,6 +24,7 @@ export class StudentComponent implements OnInit {
   }
   ngOnInit() {
     this.loadCourses();
+    console.log('courses ' + this.Courses);
     this.studentForm = new FormGroup({
       newFirstName: this.newFirstName,
       newLastName: this.newLastName,
@@ -33,7 +34,7 @@ export class StudentComponent implements OnInit {
   }
 
   add(newData) {
-    this.restApi.newRecord(this.Courses).subscribe((data: {}) => {});
+    this.restApi.newRecord(this.newRecord).subscribe((data: {}) => {});
     alert('Мы приняли вашу заявку!');
   }
 

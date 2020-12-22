@@ -5,10 +5,10 @@ import {Router} from '@angular/router';
 
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: 'admin-nav',
-  templateUrl: './navAdmin.component.html'
+  selector: 'student-nav',
+  templateUrl: './studentNav.component.html'
 })
-export class NavAdminComponent implements OnInit{
+export class StudentNavComponent implements OnInit{
   toDate: Date = new Date();
   isLoggedInAdmin: boolean;
   constructor(public userService: AllService, public logSer: LoggingService, private route: Router) {

@@ -11,6 +11,7 @@ import {UserGuard} from './guards/user.guard';
 import {NavAdminComponent} from './navForAdmin/navAdmin.component';
 import {SubjectCreateComponent} from './subjectListAdmin/subjectCreate/subjectCreate.component';
 import {SubjectUpdateComponent} from './subjectListAdmin/subjectUpdate/subjectUpdate.component';
+import {AppModule} from './app.module';
 
 @NgModule({
   declarations: [
@@ -22,13 +23,13 @@ import {SubjectUpdateComponent} from './subjectListAdmin/subjectUpdate/subjectUp
     SubjectCreateComponent,
     SubjectUpdateComponent
   ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(AdminRoutes),
-    FormsModule,
-    AdminRoutingModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(AdminRoutes),
+        FormsModule,
+        AdminRoutingModule,
+        ReactiveFormsModule
+    ],
   providers: [UserGuard],
   exports: [
     NavAdminComponent
