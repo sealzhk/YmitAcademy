@@ -31,7 +31,6 @@ import {UserGuard} from './guards/user.guard';
 import {SaveGuard} from './guards/save.guard';
 import {CanLoadGuard} from './guards/canLoad.guard';
 import {HttpClientModule} from '@angular/common/http';
-import {confirmPasswordDirective} from './services/confirmPassword.directive';
 import {AdminModule} from './admin.module';
 import {StudentModule} from './student.module';
 
@@ -56,8 +55,7 @@ import {StudentModule} from './student.module';
         LoginComponent,
         RegistrComponent,
         NewRevComponent,
-        AllRevComponent,
-        confirmPasswordDirective
+        AllRevComponent
     ],
     imports: [
         BrowserModule,

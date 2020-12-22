@@ -8,7 +8,7 @@
       </div>
       <h4 class="display-5 text-truncate" style="text-align: left">Ссылка на изображение:</h4>
       <div class="form-group">
-        <input required type="text" class="form-control" placeholder="Введите ссылку" #newImg [(ngModel)]="newSubject.image" formControlName="newImg" [ngClass]="{'is-invalid': subForm.get('newImg').touched && subForm.get('newImg').invalid}">
+        <input required type="file" class="form-control" placeholder="Введите ссылку" #newImg [(ngModel)]="newSubject.image" formControlName="newImg" [ngClass]="{'is-invalid': subForm.get('newImg').touched && subForm.get('newImg').invalid}">
       </div>
       <h4 class="display-5 text-truncate" style="text-align: left">Заголовок:</h4>
       <div class="form-group">

@@ -26,6 +26,7 @@ export class UserListAdminComponent implements OnInit{
   }
 
   ngOnInit() {
+    this.allServ.first = false;
     this.loadUsers();
   }
 }

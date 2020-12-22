@@ -38,14 +38,19 @@ export class LoginComponent implements OnInit {
     if (this.Users.find(x => x.email === this.email)) {
       this.user = this.Users.find(x => x.email === this.email);
       if (this.user.password === this.password) {
+        this.userService.firstname = this.user.firstname;
+        this.userService.lastname = this.user.lastname;
+        this.userService.school = this.user.school;
+        this.userService.email = this.user.email;
+        console.log('user: ' + this.userService.firstname);
         if (this.user.role === 'admin') {
           this.userService.login = true;
-          this.router.navigate(['admin']);
+          this.router.navigate(['userslist']);
         }
         else {
           this.userService.login = true;
           console.log('its worked' + this.userService.login);
-          this.router.navigate(['student']);
+          this.router.navigate(['addCourse']);
         }
       }
     else {

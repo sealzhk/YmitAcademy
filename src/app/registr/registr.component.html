@@ -10,6 +10,10 @@
       <input required type="lastname" #newLastName class="form-control" [(ngModel)]="newUser.lastname" placeholder="Введите фамилию" id="lastname" formControlName="newLastName" [ngClass]="{'is-invalid': regirstrForm.get('newLastName').touched && regirstrForm.get('newLastName').invalid}">
     </div>
     <div class="form-group">
+      <label for="school">Введите вашу школу:</label>
+      <input required type="school" #newSchool class="form-control" [(ngModel)]="newUser.school" placeholder="Введите школу" id="school" formControlName="school" [ngClass]="{'is-invalid': regirstrForm.get('newSchool').touched && regirstrForm.get('newSchool').invalid}">
+    </div>
+    <div class="form-group">
       <label for="email">Введите email:</label>
       <input required type="email" #newEmail class="form-control" [(ngModel)]="newUser.email" placeholder="Введите email" id="email" formControlName="newEmail" [ngClass]="{'is-invalid': regirstrForm.get('newEmail').touched && regirstrForm.get('newEmail').invalid}">
       <div *ngIf="regirstrForm.get('newEmail').touched && regirstrForm.get('newEmail').invalid" class="invalid-feedback">

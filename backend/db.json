@@ -22,6 +22,7 @@
       "firstname": "Алуа",
       "lastname": "Жакиева",
       "email": "aluazhakievaaa@gmail.com",
+      "school": "-",
       "password": "1234567890",
       "role": "admin"
     },
@@ -30,6 +31,7 @@
       "lastname": "Сериккажы",
       "email": "islam@gmail.com",
       "password": "1234567890",
+      "school": "РФМШ",
       "role": "student",
       "id": 2
     }
@@ -137,6 +139,20 @@
       "telNum": "sdfghj",
       "course": "Казахский язык",
       "id": 3
+    },
+    {
+      "firstname": "Alua",
+      "lastname": "Жакиева",
+      "telNum": "aluazhakievaaa@gmail.com",
+      "course": "Биология",
+      "id": 4
+    },
+    {
+      "firstname": "Alua",
+      "lastname": "Жакиева",
+      "telNum": "aluazhakievaaa@gmail.com",
+      "course": "Биология",
+      "id": 5
     }
   ],
   "images": [

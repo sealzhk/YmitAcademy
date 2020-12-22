@@ -8,8 +8,12 @@ export class AllService {
 
   constructor(private loggingService: LoggingService, private router: Router) {
   }
+  first = true;
   isLoggedIn = false;
-
+  firstname: string;
+  lastname: string;
+  school: string;
+  email: string;
   get login(): boolean {
     return this.isLoggedIn;
   }

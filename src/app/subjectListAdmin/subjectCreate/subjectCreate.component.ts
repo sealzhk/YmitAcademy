@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {AllService} from '../../services/all.service';
@@ -11,7 +11,7 @@ import {LoggingService} from '../../services/logging.service';
   templateUrl: './subjectCreate.component.html'
 })
 
-export class SubjectCreateComponent {
+export class SubjectCreateComponent implements OnInit {
   @Input() newSubject = {sub: '', image: '', header: '', descr: '', color: ''};
   newSub: FormControl = new FormControl('', Validators.required);
   newImg: FormControl = new FormControl('', Validators.required);
@@ -31,6 +31,10 @@ export class SubjectCreateComponent {
   create(){
     this.router.navigate(['subjectCreate']);
   }
+  ngOnInit() {
+    this.allServ.first = false;
+  }
+
   addReview(dataReview) {
     this.restApi.newCourse(this.newSubject).subscribe((data: {}) => {
       this.router.navigate(['subjectslist']);

@@ -35,6 +35,7 @@ export class SubjectListAdminComponent implements OnInit{
     this.router.navigate(['subjectCreate']);
   }
   ngOnInit() {
+    this.allServ.first = false;
     this.loadCourses();
   }
   delete(id) {

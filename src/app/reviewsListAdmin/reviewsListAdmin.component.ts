@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {AllService} from '../services/all.service';
 import {ApiService} from '../services/api.service';
@@ -9,7 +9,7 @@ import {LoggingService} from '../services/logging.service';
   selector: 'admin-group',
   templateUrl: './reviewsListAdmin.component.html'
 })
-export class ReviewsListAdminComponent {
+export class ReviewsListAdminComponent implements OnInit {
   Reviews: any = [];
   constructor(private router: Router, private allServ: AllService, public restApi: ApiService, private logService: LoggingService) {
   }
@@ -26,6 +26,7 @@ export class ReviewsListAdminComponent {
   }
 
   ngOnInit() {
+    this.allServ.first = false;
     this.loadRev();
   }
 }

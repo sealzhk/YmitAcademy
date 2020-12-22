@@ -5,13 +5,17 @@ import {UserGuard} from './guards/user.guard';
 import {StudentComponent} from './student.component';
 import {StudentRoute, StudentRoutingModule} from './student-routing.module';
 import {RouterModule} from '@angular/router';
-import {AppModule} from './app.module';
 import {StudentNavComponent} from './studentNav/studentNav.component';
+import {StudentProfileComponent} from './studentProfile/studentProfile.component';
+import {StudentAddComponent} from './studentAdd/studentAdd.component';
+
 
 @NgModule({
   declarations: [
     StudentComponent,
-    StudentNavComponent
+    StudentNavComponent,
+    StudentProfileComponent,
+    StudentAddComponent
   ],
     imports: [
         CommonModule,
