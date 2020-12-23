@@ -1,5 +1,5 @@
 <app-nav></app-nav>
-<div class="container mt-5">
+<div class="container my-5">
   <form [formGroup]="regirstrForm" (ngSubmit)="regirstrForm.valid && addUser(newUser)">
     <div class="form-group">
       <label for="firstname">Введите имя:</label>
@@ -11,7 +11,7 @@
     </div>
     <div class="form-group">
       <label for="school">Введите вашу школу:</label>
-      <input required type="school" #newSchool class="form-control" [(ngModel)]="newUser.school" placeholder="Введите школу" id="school" formControlName="school" [ngClass]="{'is-invalid': regirstrForm.get('newSchool').touched && regirstrForm.get('newSchool').invalid}">
+      <input required type="school" #newSchool class="form-control" [(ngModel)]="newUser.school" placeholder="Введите школу" id="school" formControlName="newSchool" [ngClass]="{'is-invalid': regirstrForm.get('newSchool').touched && regirstrForm.get('newSchool').invalid}">
     </div>
     <div class="form-group">
       <label for="email">Введите email:</label>
@@ -38,6 +38,6 @@
         <div *ngIf="regirstrForm.get('newPasswordAgain').errors.notEqual">Пароль не совпадает</div>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]='!regirstrForm.valid'>Зарегестрироваться</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!regirstrForm.valid">Зарегестрироваться</button>
   </form>
 </div>

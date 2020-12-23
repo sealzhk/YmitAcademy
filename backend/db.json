@@ -34,6 +34,42 @@
       "school": "РФМШ",
       "role": "student",
       "id": 2
+    },
+    {
+      "firstname": "qwrty",
+      "lastname": "qwerty",
+      "school": "173",
+      "email": "alalal@gmail.com",
+      "password": "1234567890",
+      "role": "student",
+      "id": 3
+    },
+    {
+      "firstname": "asdfg",
+      "lastname": "sdfgh",
+      "school": "173",
+      "email": "qwerty@gmail.com",
+      "password": "1234567890",
+      "role": "student",
+      "id": 4
+    },
+    {
+      "firstname": "qwerty",
+      "lastname": "qwerty",
+      "school": "173",
+      "email": "qwerty@gmail.com",
+      "password": "qwerty1234567890",
+      "role": "student",
+      "id": 5
+    },
+    {
+      "firstname": "Samad",
+      "lastname": "Loh",
+      "school": "192",
+      "email": "samadloh@gmail.com",
+      "password": "1234567890",
+      "role": "student",
+      "id": 6
     }
   ],
   "courses": [

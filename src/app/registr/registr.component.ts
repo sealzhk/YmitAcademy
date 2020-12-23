@@ -41,7 +41,11 @@ export class RegistrComponent implements OnInit {
   addUser(dataReview) {
     this.restApi.newUser(this.newUser).subscribe((data: {}) => {
       this.userService.login = true;
-      this.router.navigate(['/student']);
+      this.userService.firstname = this.newUser.firstname;
+      this.userService.lastname = this.newUser.lastname;
+      this.userService.school = this.newUser.school;
+      this.userService.email = this.newUser.email;
+      this.router.navigate(['/profile']);
     });
   }
 }
